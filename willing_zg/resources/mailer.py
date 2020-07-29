@@ -51,9 +51,9 @@ class Mailer:
             return False
 
     @classmethod
-    def send_account_notice(cls, user, subject, text):
+    def send_account_notice(cls, email, user, subject, text):
         return cls.send_email(
-            [user.email],
+            [email],
             f"Account Notice: {subject}",
             "mlp_transactional_email",
             {"user": user, "notice": text,},
